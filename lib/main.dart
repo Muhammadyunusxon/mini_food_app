@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:setup_provider/application/auth_provider.dart';
 
 import 'application/app_provider.dart';
 import 'presentation/app_widget.dart';
@@ -30,6 +31,9 @@ void main() {
         providers: [
           ChangeNotifierProvider(
             create: (BuildContext context) => AppProvider()..setTheme(),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => AuthProvider(),
           )
         ],
         child: AppWidget(),

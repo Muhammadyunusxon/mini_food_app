@@ -11,7 +11,12 @@ class AppProvider extends ChangeNotifier {
   }
 
   setTheme() async {
-    isLightTheme = await LocalStore.getTheme();
+    await LocalStore.init();
+    isLightTheme =  LocalStore.getTheme();
     notifyListeners();
   }
+
+
+
+
 }

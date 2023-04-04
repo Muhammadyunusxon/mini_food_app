@@ -1,23 +1,25 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalStore {
-  static setTheme(bool value) async {
-    SharedPreferences local = await SharedPreferences.getInstance();
-    local.setBool("theme", value);
+  static SharedPreferences? local;
+
+  static init() async {
+    local = await SharedPreferences.getInstance();
   }
 
-  static Future<bool> getTheme() async {
-    SharedPreferences local = await SharedPreferences.getInstance();
-    return local.getBool("theme") ?? true;
+  static setTheme(bool value) {
+    local?.setBool("theme", value);
   }
 
-  static setToken(String value) async {
-    SharedPreferences local = await SharedPreferences.getInstance();
-    local.setString("token", value);
+  static bool getTheme() {
+    return local?.getBool("theme") ?? true;
   }
 
-  static Future<String> getToken() async {
-    SharedPreferences local = await SharedPreferences.getInstance();
-    return local.getString("token") ?? "";
+  static setToken(String value) {
+    local?.setString("token", value);
+  }
+
+  static String getToken() {
+    return local?.getString("token") ?? "";
   }
 }

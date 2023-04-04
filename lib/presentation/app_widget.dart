@@ -15,7 +15,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: const Size(375, 812),
-        builder: (BuildContext context,Widget? child) {
+        builder: (BuildContext context, Widget? child) {
           return MaterialApp(
             locale: context.locale,
             supportedLocales: context.supportedLocales,
@@ -25,12 +25,20 @@ class AppWidget extends StatelessWidget {
                 : ThemeMode.dark,
             theme: ThemeData.light().copyWith(
                 primaryColor: Style.primaryColor,
+                colorScheme:
+                    ColorScheme.light().copyWith(error: Style.errorLight),
                 textTheme: TextTheme(
-                    labelSmall: Style.regular(),
-                    labelMedium: Style.normal(),
-                    labelLarge: Style.bold())),
+                  labelSmall: Style.regular(),
+                  labelMedium: Style.normal(),
+                  labelLarge: Style.bold(),
+                  titleSmall: Style.regular(color: Style.white),
+                  titleMedium: Style.normal(color: Style.white),
+                  titleLarge: Style.bold(color: Style.white),
+                )),
             darkTheme: ThemeData.dark().copyWith(
                 primaryColor: Style.primaryDarkColor,
+                colorScheme:
+                    ColorScheme.dark().copyWith(error: Style.errorDark),
                 textTheme: TextTheme(
                     labelSmall: Style.regular(color: Style.white),
                     labelMedium: Style.normal(color: Style.white),

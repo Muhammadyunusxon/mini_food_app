@@ -7,13 +7,13 @@ import '../style/style.dart';
 class Loading extends StatelessWidget {
   final Color bgColor;
 
-  const Loading({Key? key, this.bgColor = Style.textColor}) : super(key: key);
+  const Loading({Key? key, this.bgColor = Style.white}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Platform.isAndroid
-          ? const CircularProgressIndicator()
+          ?  CircularProgressIndicator(color: bgColor,)
           : CupertinoActivityIndicator(
               color: bgColor,
               radius: 12,
