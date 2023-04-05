@@ -14,7 +14,6 @@ class ChatProvider extends ChangeNotifier {
         "wss://s8733.nyc1.piesocket.com/v3/1?api_key=qI0c2JCkK1byM1GmLw6VYFG0Loaz3rHus3MAGFvy&notify_self=1");
     channel?.stream.listen((event) {
       list.insert(0,ChatModel.fromJson(jsonDecode(event)));
-      print(list.first);
       notifyListeners();
     });
   }
@@ -26,5 +25,9 @@ class ChatProvider extends ChangeNotifier {
 
   saveName(String name) {
     this.name = name;
+  }
+
+  close(){
+    channel?.sink.close();
   }
 }
