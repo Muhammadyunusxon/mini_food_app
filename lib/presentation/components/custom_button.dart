@@ -20,6 +20,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
       onTap: isLoading ? null : onTap,
       child: AnimationButtonEffect(
+        disabled: !isLoading,
         child: Container(
           height: 60.h,
           width: double.infinity,

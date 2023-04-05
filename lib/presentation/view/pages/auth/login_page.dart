@@ -49,7 +49,9 @@ class _LoginPageState extends State<LoginPage> {
             CustomButton(
               onTap: () {
                 if (formKey.currentState?.validate() ?? false) {
-                  event.login(onSuccess: () => AppRoute.goMain(context));
+                  event.login(
+                      context: context,
+                      onSuccess: () => AppRoute.goMain(context));
                 }
               },
               title: "Login",

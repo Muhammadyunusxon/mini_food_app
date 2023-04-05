@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:setup_provider/domain/facade/auth_facade.dart';
+import 'package:setup_provider/infastructura/servises/app_helper.dart';
 import 'package:setup_provider/infastructura/servises/local_store.dart';
 import 'package:web_socket_channel/io.dart';
 
@@ -9,15 +10,20 @@ class AuthProvider extends ChangeNotifier {
 
   AuthProvider(this.authRepo);
 
-  login({required VoidCallback onSuccess}) async {
+  login(
+      {required BuildContext context, required VoidCallback onSuccess}) async {
     isLoading = true;
     notifyListeners();
-    authRepo.login("email");
-    Future.delayed(Duration(seconds: 2), () {
+    final res = await authRepo.login("email");
+    res.fold((data) {
       isLoading = false;
       notifyListeners();
       onSuccess();
-      LocalStore.setToken("value");
+      LocalStore.setToken(data.firstname);
+    }, (error) {
+      isLoading = false;
+      notifyListeners();
+      AppHelper.errorSnackBar(context: context,message: error);
     });
   }
 
