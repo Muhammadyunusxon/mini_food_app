@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/auth_provider.dart';
+import 'package:setup_provider/infastructura/servises/app_validators.dart';
 import 'package:setup_provider/presentation/components/custom_button.dart';
 import 'package:setup_provider/presentation/components/custom_text_form_field.dart';
 import 'package:setup_provider/presentation/route.dart';
-import 'package:setup_provider/presentation/view/pages/main/main_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +33,24 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CustomTextFormField(
-              label: "Login",
+            Form(
+              key: formKey,
+              child: CustomTextFormField(
+                validator: (s) {
+                  if (AppValidators.isValidEmail(s ?? "")) {
+                    return null;
+                  } else {
+                    return "Email Xatto";
+                  }
+                },
+                label: "Login",
+              ),
             ),
             CustomButton(
               onTap: () {
-                event.login(onSuccess:()=> AppRoute.goMain(context));
+                if (formKey.currentState?.validate() ?? false) {
+                  event.login(onSuccess: () => AppRoute.goMain(context));
+                }
               },
               title: "Login",
               isLoading: state.isLoading,

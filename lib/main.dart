@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:setup_provider/application/auth_provider.dart';
+import 'package:setup_provider/application/chat_provider.dart';
+import 'package:setup_provider/domain/di/di.dart';
+import 'package:setup_provider/infastructura/repo/auth_repo.dart';
 
 import 'application/app_provider.dart';
 import 'presentation/app_widget.dart';
@@ -21,6 +24,7 @@ void main() {
       statusBarBrightness: Brightness.dark,
     ),
   );
+  setUp();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale("uz", "UZ")],
@@ -33,7 +37,10 @@ void main() {
             create: (BuildContext context) => AppProvider()..setTheme(),
           ),
           ChangeNotifierProvider(
-            create: (BuildContext context) => AuthProvider(),
+            create: (BuildContext context) => AuthProvider(authRepo),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => ChatProvider()..connectSocket(),
           )
         ],
         child: AppWidget(),

@@ -22,4 +22,8 @@ abstract class LocalStore {
   static String getToken() {
     return local?.getString("token") ?? "";
   }
+
+  static clear() {
+    local?.clear();
+  }
 }

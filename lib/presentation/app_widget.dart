@@ -28,10 +28,10 @@ class AppWidget extends StatelessWidget {
                 colorScheme:
                     ColorScheme.light().copyWith(error: Style.errorLight),
                 textTheme: TextTheme(
-                  labelSmall: Style.regular(),
+                  labelSmall: Style.regular(size: 12),
                   labelMedium: Style.normal(),
                   labelLarge: Style.bold(),
-                  titleSmall: Style.regular(color: Style.white),
+                  titleSmall: Style.regular(color: Style.white,size: 12),
                   titleMedium: Style.normal(color: Style.white),
                   titleLarge: Style.bold(color: Style.white),
                 )),
