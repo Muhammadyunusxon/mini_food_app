@@ -30,11 +30,6 @@ class MainPage extends StatelessWidget {
                   });
                 },
                 title: "Log out"),
-            CustomButton(
-                onTap: () {
-                  AppRoute.goChat(context);
-                },
-                title: "Chat")
           ],
         ),
       ),

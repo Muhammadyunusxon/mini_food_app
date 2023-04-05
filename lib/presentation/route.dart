@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:setup_provider/presentation/view/pages/auth/login_page.dart';
-import 'package:setup_provider/presentation/view/pages/chat/chat_page.dart';
 
 import 'view/pages/main/main_page.dart';
 
@@ -23,9 +22,4 @@ abstract class AppRoute {
         (route) => false,
       );
 
-  static goChat(BuildContext context) => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => ChatPage(),
-        ),
-      );
 }
