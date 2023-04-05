@@ -13,14 +13,15 @@ class ChatProvider extends ChangeNotifier {
     channel = await IOWebSocketChannel.connect(
         "wss://s8733.nyc1.piesocket.com/v3/1?api_key=qI0c2JCkK1byM1GmLw6VYFG0Loaz3rHus3MAGFvy&notify_self=1");
     channel?.stream.listen((event) {
-      list.add(ChatModel.fromJson(jsonDecode(event)));
+      list.insert(0,ChatModel.fromJson(jsonDecode(event)));
+      print(list.first);
       notifyListeners();
     });
   }
 
   sendMessage({required String message}) {
-    channel?.sink
-        .add(jsonEncode(ChatModel(firstname: name ?? "", message: message).toJson()));
+    channel?.sink.add(jsonEncode(
+        ChatModel(firstname: name ?? "", message: message).toJson()));
   }
 
   saveName(String name) {

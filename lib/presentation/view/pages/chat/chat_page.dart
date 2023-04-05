@@ -25,6 +25,7 @@ class _ChatPageState extends State<ChatPage> {
         title: Text("Chat"),
       ),
       body: ListView.builder(
+          reverse: true,
           itemCount: state.list.length,
           itemBuilder: (context, index) {
             return Padding(
