@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:setup_provider/domain/facade/auth_facade.dart';
-import 'package:setup_provider/infastructura/servises/app_helper.dart';
-import 'package:setup_provider/infastructura/servises/local_store.dart';
+import 'package:mini_food_app/domain/facade/auth_facade.dart';
+import 'package:mini_food_app/infastructura/servises/app_helper.dart';
+import 'package:mini_food_app/infastructura/servises/local_store.dart';
 import 'package:web_socket_channel/io.dart';
 
 class AuthProvider extends ChangeNotifier {

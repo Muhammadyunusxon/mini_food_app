@@ -3,10 +3,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:setup_provider/application/app_provider.dart';
-import 'package:setup_provider/presentation/style/style.dart';
-import 'package:setup_provider/presentation/view/init/no_internet.dart';
-import 'package:setup_provider/presentation/view/init/splash_page.dart';
+import 'package:mini_food_app/application/app_provider.dart';
+import 'package:mini_food_app/presentation/style/style.dart';
+import 'package:mini_food_app/presentation/view/init/no_internet.dart';
+import 'package:mini_food_app/presentation/view/init/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);

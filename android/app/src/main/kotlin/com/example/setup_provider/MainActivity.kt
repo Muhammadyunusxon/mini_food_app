@@ -1,4 +1,4 @@
-package com.example.setup_provider
+package com.example.mini_food_app
 
 import io.flutter.embedding.android.FlutterActivity
 

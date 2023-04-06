@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:setup_provider/infastructura/servises/app_constant.dart';
+import 'package:mini_food_app/infastructura/servises/app_constant.dart';
 
 abstract class DioService {
   DioService._();

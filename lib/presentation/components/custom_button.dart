@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:setup_provider/presentation/components/animation_button_effect.dart';
-import 'package:setup_provider/presentation/components/loading.dart';
+import 'package:mini_food_app/presentation/components/animation_button_effect.dart';
+import 'package:mini_food_app/presentation/components/loading.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback onTap;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:setup_provider/presentation/style/style.dart';
+import 'package:mini_food_app/presentation/style/style.dart';
 
 abstract class AppHelper {
   AppHelper._();

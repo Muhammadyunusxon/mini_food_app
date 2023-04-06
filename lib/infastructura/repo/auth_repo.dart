@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:setup_provider/domain/facade/auth_facade.dart';
-import 'package:setup_provider/domain/model/user_model.dart';
-import 'package:setup_provider/infastructura/servises/dio.dart';
+import 'package:mini_food_app/domain/facade/auth_facade.dart';
+import 'package:mini_food_app/domain/model/user_model.dart';
+import 'package:mini_food_app/infastructura/servises/dio.dart';
 
 class AuthRepo implements AuthFacade {
   @override

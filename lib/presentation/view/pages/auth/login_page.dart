@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:setup_provider/application/auth_provider.dart';
-import 'package:setup_provider/infastructura/servises/app_validators.dart';
-import 'package:setup_provider/presentation/components/custom_button.dart';
-import 'package:setup_provider/presentation/components/custom_text_form_field.dart';
-import 'package:setup_provider/presentation/route.dart';
+import 'package:mini_food_app/application/auth_provider.dart';
+import 'package:mini_food_app/infastructura/servises/app_validators.dart';
+import 'package:mini_food_app/presentation/components/custom_button.dart';
+import 'package:mini_food_app/presentation/components/custom_text_form_field.dart';
+import 'package:mini_food_app/presentation/route.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

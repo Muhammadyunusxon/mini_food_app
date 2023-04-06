@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:setup_provider/presentation/view/pages/auth/login_page.dart';
+import 'package:mini_food_app/presentation/view/pages/auth/login_page.dart';
 
 import 'view/pages/main/main_page.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:setup_provider/infastructura/servises/local_store.dart';
+import 'package:mini_food_app/infastructura/servises/local_store.dart';
 
 class AppProvider extends ChangeNotifier {
   bool isLightTheme = true;

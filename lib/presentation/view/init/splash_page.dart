@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:setup_provider/infastructura/servises/local_store.dart';
-import 'package:setup_provider/presentation/view/pages/auth/login_page.dart';
-import 'package:setup_provider/presentation/view/pages/main/main_page.dart';
+import 'package:mini_food_app/infastructura/servises/local_store.dart';
+import 'package:mini_food_app/presentation/view/pages/auth/login_page.dart';
+import 'package:mini_food_app/presentation/view/pages/main/main_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
