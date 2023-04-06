@@ -29,6 +29,12 @@ dependencies:
   flutter_screenutil: ^5.7.0
   flutter_native_splash: ^2.2.19
   cached_network_image: ^3.2.3
+  proste_indexed_stack: ^0.2.4
+
+
+  #firebase
+  firebase_core: ^2.9.0
+  firebase_messaging: ^14.4.0
 
 
 

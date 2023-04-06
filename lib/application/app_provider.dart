@@ -15,8 +15,4 @@ class AppProvider extends ChangeNotifier {
     isLightTheme =  LocalStore.getTheme();
     notifyListeners();
   }
-
-
-
-
 }

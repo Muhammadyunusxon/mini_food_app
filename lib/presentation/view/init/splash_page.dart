@@ -20,7 +20,7 @@ class SplashPage extends StatelessWidget {
             if (snapshot.data ?? false) {
               return MainPage(); // mainPage
             } else {
-              return LoginPage(); // loginPage
+              return MainPage(); // loginPage
             }
           } else {
             return Scaffold(

@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -7,13 +9,21 @@ import 'package:setup_provider/domain/di/di.dart';
 import 'package:setup_provider/infastructura/repo/auth_repo.dart';
 
 import 'application/app_provider.dart';
+import 'application/main_provider.dart';
 import 'presentation/app_widget.dart';
 import 'presentation/style/style.dart';
 
-void main() {
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  debugPrint("Handling a background message: ${message.messageId}");
+}
+
+void main() async {
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   WidgetsFlutterBinding.ensureInitialized();
   // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SystemChrome.setSystemUIOverlayStyle(
@@ -37,6 +47,9 @@ void main() {
           ),
           ChangeNotifierProvider(
             create: (BuildContext context) => AuthProvider(authRepo),
+          ),
+          ChangeNotifierProvider(
+            create: (BuildContext context) => MainProvider(),
           ),
         ],
         child: AppWidget(),
